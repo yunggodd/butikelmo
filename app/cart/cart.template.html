@@ -1,0 +1,39 @@
+<div class="col-md-8 col-md-offset-2" ng-controller="cartController">
+  <table class="table table-stripped ">
+    <h2>Your cart</h2>
+    <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price/st</th>
+      <th>Quantity</th>
+    </tr>
+    </thead>
+    <p>{{buyText}}</p>
+    <tbody>
+    <tr ng-repeat="product in cart">
+      <td><img class="productImage" ng-src="{{product.imageUrl}}" alt="{{product.name}}"></td>
+      <td>{{product.name}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.quantity}}</td>
+      </td>
+    </tr>
+    </tbody>
+  </table> </div>
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-5">
+        <p align="left">Total: {{totalSum}}:-</p>
+        <button class="btn btn-success" ng-click="checkout()">Checkout</button>
+        <button class="btn btn-danger" ng-click="emptyCart()">Empty Cart</button><br>
+        {{orderText}}
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
+<div class="col-md-4">
+</div>

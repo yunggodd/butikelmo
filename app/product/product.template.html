@@ -1,0 +1,53 @@
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-2">
+    <div align="left" class="categoryMenu">
+      <select ng-model = "selectedCategory">
+        <option value="">Categories</option>
+        <option ng-repeat="category in categories" value="{{category.id}}">
+          {{category.name}}
+        </option>
+      </select>
+    </div>
+
+    <div align="left" class="searchBar">
+      <input ng-model="searchTerm" class="form-control ng-pristine ng-valid ng-empty ng-touched"
+             placeholder="Search Product">
+      </input>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+
+
+</div>
+
+
+  <li class="list-group-item" ng-repeat="product in products | filter: {categoryId: selectedCategory}| filter: {name: searchTerm}" >
+    <div class="row">
+      <div class="col-md-3">
+        <p class="show-description" ng-click="showDetails = ! showDetails">{{product.name}}</p>
+        {{product.price + 'kr'}}<br>
+
+        <div class="product-details" >
+          {{product.description}}
+        </div>
+      </div>
+      <div id="image-box" class="col-md-6">
+        <img class="productImage " ng-src="{{product.imageUrl}}">
+        <button title = "{{isLoggedIn  ? '' : 'Log in to add items to cart.'}}"
+                class="{{product.unitsInStock == 0 ? 'btn btn-danger' : 'btn btn-success'}}"
+                ng-controller="cartController" ng-disabled="!isLoggedIn || product.unitsInStock == 0"
+                ng-click="addToCart(product)">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button><br>
+        <span ng-if="product.unitsInStock > 0">⠀In stock: {{product.unitsInStock}}</span>
+        <span ng-if="product.unitsInStock == 0">⠀This item is out of stock sorry!</span> <br><br>
+      </div>
+    </div>
+  </li>
+</ul>
