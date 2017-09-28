@@ -11,13 +11,13 @@ angular.module("cart").
                     $scope.orderText = "There are no products in the cart"
                 }
                 else {
-                    $scope.orderText = "Order confirmed";
+                    $scope.orderText = "Order registered";
                     cartService.emptyCart();
                     $scope.totalSum = 0;
                 }
 
             }, function error() {
-                $scope.orderText = "Something went wrong, try again later."
+                $scope.orderText = "Error: Try again"
                 }
             )
         };
@@ -33,6 +33,6 @@ angular.module("cart").
         $scope.emptyCart = function () {
             cartService.emptyCart();
             $scope.totalSum = 0;
-            $scope.orderText = "You emptied the cart"
+            $scope.orderText = "You emptied the cart";
         };
     }]);
