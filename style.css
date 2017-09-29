@@ -7,6 +7,7 @@
     position: relative;
     padding: 10px 15px;
     margin-bottom: -1px;
+    border: 1px solid #222;
 }
 
 .row {
@@ -64,17 +65,41 @@
 
 
 .searchBar {
-    margin-left: -250px;
+    margin-left: 20px;
     margin-top: -60px;
+    width:50%;
 }
 
 .categoryMenu {
-    margin-left: auto;
-    margin-top: -20px;
+    margin-left: 300px;
 }
 
 .navbar>.container .navbar-brand,
     .navbar>.container-fluid .navbar-brand {
     margin-left: -65px;
+}
+
+h2 {
+    color: antiquewhite;
+}
+
+label {
+    color:antiquewhite;
+}
+
+th {
+    color: antiquewhite;
+}
+
+td {
+    color: antiquewhite;
+}
+
+p.cartSum {
+    color: antiquewhite;
+}
+
+.col-md-5.ng-binding {
+    color: antiquewhite;
 }
 

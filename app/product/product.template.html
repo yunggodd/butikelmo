@@ -4,14 +4,14 @@
 <div class="row">
   <div class="col-md-4">
   </div>
-  <div class="col-md-2">
-    <div align="left" class="categoryMenu">
-      <select ng-model = "selectedCategory" >
-        <option value="">All</option>
-        <option ng-repeat="category in categories" value="{{category.id}}">
-          {{category.name}}
-        </option>
-      </select>
+
+    <div class="categoryMenu">
+        <select ng-controller ="categoryController" ng-click="filterCategory(0)" class="form-control" >
+            <option value="">Category</option>
+            <option ng-repeat="category in categories" id="{{category.id}}">
+                {{category.name}}
+            </option>
+        </select>
     </div>
 
     <div align="left" class="searchBar">
@@ -20,15 +20,11 @@
       </input>
     </div>
     <div class="col-md-4">
-
     </div>
   </div>
 
-
-</div>
-
-
-  <li class="list-group-item" ng-repeat="product in products | filter: {categoryId: selectedCategory}| filter: {name: searchTerm}" >
+  <li class="list-group-item" ng-repeat="product in products |
+                filter: {categoryId: categoryController} | filter: {name: searchTerm}" >
     <div class="row">
       <div class="col-md-3">
         <p class="show-description" ng-click="showDetails = ! showDetails">{{product.name}}</p>

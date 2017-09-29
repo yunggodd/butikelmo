@@ -29,7 +29,6 @@ angular.module("login").
         };
 
         $scope.customer = {};
-        $scope.testande = "test";
 
         $scope.createCustomer = function() {
             var newCustomer = {
