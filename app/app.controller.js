@@ -1,7 +1,5 @@
 angular.module("app").
-    controller("appController", ["$scope",
-    function ($scope) {
-
+    controller("appController", ["$scope", function ($scope) {
 }]);
 
 angular.module("app").

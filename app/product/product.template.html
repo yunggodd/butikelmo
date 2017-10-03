@@ -27,12 +27,20 @@
                 filter: {id: categoryController} | filter: {name: searchTerm}" >
     <div class="row">
       <div class="col-md-3">
-        <p class="show-description" ng-click="showDetails = ! showDetails">{{product.name}}</p>
-        {{product.price + 'kr'}}<br>
+          <p class="show-description">{{product.name}}</p>
+          {{product.price + 'kr'}}<br>
+          <br>
 
-        <div class="product-details" >
-          {{product.description}}
-        </div>
+          <button type="button" class="btn btn-info btn-xs">
+          <p class="product-details" ng-click="showDetails = ! showDetails">Show description</p>
+          </button>
+          <br>
+
+          <div class="product-details" ng-class="{hidden: ! showDetails}">
+              {{product.description}}
+          </div>
+
+
       </div>
       <div id="image-box" class="col-md-6">
         <img class="productImage " ng-src="{{product.imageUrl}}">

@@ -41,8 +41,6 @@ angular.module("login").
                 address: $scope.customer.address,
                 postalCode: $scope.customer.postalCode,
                 city: $scope.customer.city
-
-
             };
 
             loginService.createLogin(newCustomer).then(function successCreate() {
@@ -50,7 +48,7 @@ angular.module("login").
                 $location.path("/login");
 
             },function failCreate() {
-                $scope.createErrorText = "Failed to create customer."
+                $scope.createErrorText = "Something went wrong"
 
                 }
             );
