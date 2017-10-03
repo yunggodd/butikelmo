@@ -15,14 +15,11 @@ angular.module("cart").
                     cartService.emptyCart();
                     $scope.totalSum = 0;
                 }
-
             }, function error() {
                 $scope.orderText = "Error: Try again"
                 }
             )
         };
-
-
         $scope.addToCart = function (product) {
             cartService.addToCart(product);
             console.log(cartService.returnCart())

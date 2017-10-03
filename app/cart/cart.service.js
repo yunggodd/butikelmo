@@ -21,12 +21,17 @@ angular.module("cart")
                         shopCart.push(product);
                     }
                 }
-
-
             },
             returnCart: function () {
                 return shopCart;
             },
+
+            emptyCart: function () {
+                for (var i = 0; i < shopCart.length; i++){
+                    shopCart.splice(i, shopCart.length)
+                }
+            },
+
             checkout: function (internalId) {
                 var products = [];
                 var order = {};
@@ -50,10 +55,5 @@ angular.module("cart")
                 }
                 return totalSum;
             },
-            emptyCart: function () {
-                for (var i = 0; i < shopCart.length; i++){
-                    shopCart.splice(i, shopCart.length)
-                }
-            }
         }
     }]);
